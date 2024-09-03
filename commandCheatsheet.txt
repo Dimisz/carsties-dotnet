@@ -14,3 +14,13 @@ docker exec -it carsties-dotnet-postgres-1 psql -U postgres
 \l -> show databases
 \c [dbname] -> use dbname;
 \d+ "dbname" -> show columns from dbname;
+
+
+
+// SEARCH SERVICE:
+// creating the api
+1. dotnet new webapi -o src/SearchService -controllers
+// adding the project to the sln
+2. dotnet sln add src/SearchService
+3. Cleanup files
+4. Install Nuget packages for MongoDB.Entities and Automapper >=13
