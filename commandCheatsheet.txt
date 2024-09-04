@@ -24,3 +24,16 @@ docker exec -it carsties-dotnet-postgres-1 psql -U postgres
 2. dotnet sln add src/SearchService
 3. Cleanup files
 4. Install Nuget packages for MongoDB.Entities and Automapper >=13
+
+// RabbitMQ
+1. installed MassTransit package
+2. created a lib for contracts:
+dotnet new classlib -o src/Contracts
+dotnet sln add src/Contracts
+cd src/AuctionService -> dotnet add reference ../../src/Contracts
+cd ../SearchService -> dotnet add reference ../../src/Contracts
+
+
+dotnet ef migrations add Outbox
+
+
